@@ -1,41 +1,35 @@
 package hellojpa;
 
-
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Date;
 
 /**
  * Created by iopenu@gmail.com on 2020/07/01
  * Github : https://github.com/bnbaek
  */
 @Entity
+@Table(name = "MEMBER")
 public class Member {
-    @Id
-    private Long id;
-    private String name;
-    //031-355-5947
+  @Id
+  private Long id;
 
-    public Member(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+  @Column(name = "name")
+  private String username;
 
-    protected Member() {
-    }
+  private Integer age;
 
-    public Long getId() {
-        return id;
-    }
+  @Enumerated(EnumType.STRING)
+  private RoleType roleType;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date createdDate;
 
-    public String getName() {
-        return name;
-    }
+  @Temporal(TemporalType.TIMESTAMP)
+  private Date lastModifiedDate;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  @Lob
+  private String description;
+
+  public Member() {
+  }
 }

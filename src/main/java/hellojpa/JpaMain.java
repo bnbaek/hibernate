@@ -20,6 +20,8 @@ public class JpaMain {
     tx.begin();
 
     try {
+
+
 //      Member member = new Member();
 //      member.setId(2L);
 //      member.setName("HelloB");
@@ -61,8 +63,8 @@ public class JpaMain {
 
 
       //변경감지  //1차캐시상태를 snapshot을 넣어놓는다  스냅샵과 비교해서 다르면 쓰기지연sql에 변경내용을 넣어놓는다.
-      Member findMember = em.find(Member.class, 200L);
-      findMember.setName("zzzzzz");
+//      Member findMember = em.find(Member.class, 200L);
+//      findMember.setName("zzzzzz");
 
 
       tx.commit();
